@@ -1,7 +1,7 @@
 # SpearSoft.RulesEngine  
 ##### Rules Engine
 
-##### Note - SpearSoft.RulesEngine is a fork of the original RulesEngine that was published by athoma13 on CodePlex but has not been maintained for some time and was not ported (as far as I can tell) to another public source management system before CodePlex was shutdown.  The original but archived source can be found [here](https://archive.codeplex.com/?p=rulesengine).  I also changed the namespace on this version from RulesEngine to SpearSoft.RulesEngine to prevent namespace collisions.  
+##### Note - SpearSoft.RulesEngine is a fork of the original RulesEngine that was published by athoma13 on CodePlex but has not been maintained for some time and was not ported (as far as I can tell) to another public source management system before CodePlex was shutdown.  The original but archived source can be found [here](https://archive.codeplex.com/?p=rulesengine).  I also changed the namespace on this version from RulesEngine to SpearSoft.RulesEngine to prevent namespace collisions. Also, this version has already been ported to target .net core 2.1 and the library is targeting .net standard 2.0. 
 
 Rules Engine is a C# project that makes it easier for developers to define business rules on domain objects without coupling the domain object to the business rule. The rules engine supports cross-field validation and conditional validation. Rules are interface-based and are easily extensible. Rules can be added using a fluent interface.
 
