@@ -1,11 +1,11 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 using RulesEngine.Rules;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class CulpritTests
     {
         private class Person
@@ -22,7 +22,7 @@ namespace RulesEngine.Tests
             public string Suburb { get; set; }
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldBlameExplicitlySelectedCulprit_SameCulpritObject()
         {
             var builder = new Fluent.FluentBuilder();
@@ -40,7 +40,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void ShouldBlameExplicitlySelectedCulprit_DifferentCulpritObject()
         {
             var builder = new Fluent.FluentBuilder();
@@ -56,7 +56,7 @@ namespace RulesEngine.Tests
             report.AssertError(address, m => m.Line1, RuleKinds.OneOfRule, null);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldBlameExplicitlySelectedCulprit_BlameIsAfterTheRule()
         {
             var builder = new Fluent.FluentBuilder();
@@ -72,7 +72,7 @@ namespace RulesEngine.Tests
             report.AssertError(address, m => m.Line1, RuleKinds.OneOfRule, null);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldBlameExplicitlySelectedCulprit_DifferentCulpritForDifferentRules()
         {
             var builder = new Fluent.FluentBuilder();
@@ -96,7 +96,7 @@ namespace RulesEngine.Tests
         }
 
         //TODO: Blame Culprit when using composition!
-        //[TestMethod]
+        //[Test]
         public void ShouldBlameExplicitlySelectedCulprit_Composition()
         {
             var builder = new Fluent.FluentBuilder();

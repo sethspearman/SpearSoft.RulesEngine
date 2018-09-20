@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Linq.Expressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ComparerTests
     {
-        [TestMethod]
+        [Test]
         public void ShouldDifferentiateLambdas()
         {
             //Although the 2 expressions are very similar, the comparer should not be fooled.

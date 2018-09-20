@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Rules;
 using System.Linq.Expressions;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class DefaultResolverTests
     {
         private class ClassA
@@ -24,7 +24,7 @@ namespace RulesEngine.Tests
             public int C { get; set; }
         }
 
-        [TestMethod]
+        [Test]
         public void TestSimple()
         {
             var resolver = new DefaultErrorResolver();
@@ -32,7 +32,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassA validation for property A", GetErrorMessage<ClassA, int>(resolver, o => o.A, new Rules.NotNullOrEmpty()));
         }
 
-        [TestMethod]
+        [Test]
         public void TestInheritance_AllOverridden()
         {
             var resolver = new DefaultErrorResolver();
@@ -45,7 +45,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassC validation for property A", GetErrorMessage<ClassC, int>(resolver, o => o.A, new Rules.NotNullOrEmpty()));
         }
 
-        [TestMethod]
+        [Test]
         public void TestSimpleInheritance_ShouldGetBaseMessage1()
         {
             var resolver = new DefaultErrorResolver();
@@ -56,7 +56,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassA validation for property A", GetErrorMessage<ClassC, int>(resolver, o => o.A, new Rules.NotNullOrEmpty()));
         }
 
-        [TestMethod]
+        [Test]
         public void TestSimpleInheritance_ShouldGetBaseMessage2()
         {
             var resolver = new DefaultErrorResolver();
@@ -68,7 +68,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassB validation for property A", GetErrorMessage<ClassC, int>(resolver, o => o.A, new Rules.NotNullOrEmpty()));
         }
 
-        [TestMethod]
+        [Test]
         public void TestByExpression()
         {
             var resolver = new DefaultErrorResolver();
@@ -79,7 +79,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassB validation for property B", GetErrorMessage<ClassB, int>(resolver, o => o.B, new Rules.NotNullOrEmpty()));
         }
 
-        [TestMethod]
+        [Test]
         public void TestByRule()
         {
             var resolver = new DefaultErrorResolver();
@@ -96,7 +96,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassA validation for property A - Default", GetErrorMessage<ClassA, int>(resolver, o => o.A, rule3));
         }
 
-        [TestMethod]
+        [Test]
         public void TestByType()
         {
             var resolver = new DefaultErrorResolver();
@@ -113,7 +113,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void TestTestByType_ShouldGetOverridenDefault()
         {
             var resolver = new DefaultErrorResolver();

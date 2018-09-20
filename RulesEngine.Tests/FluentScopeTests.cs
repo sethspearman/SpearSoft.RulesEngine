@@ -2,15 +2,15 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class FluentScopeTests
     {
-        [TestMethod]
+        [Test]
         public void ShouldReturnPrimitive()
         {
             var bag = CreateScope();
@@ -20,7 +20,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual(123, bag.Get(CreateKey<object>("lala")));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldReturnReference()
         {
             var bag = CreateScope();

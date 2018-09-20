@@ -3,15 +3,15 @@ using System.Reflection;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class IFluentNodeConformityTests
     {
-        [TestMethod]
+        [Test]
         public void AllFluentNodesShouldDeclareAInternalConstructor()
         {
             //BuilderHelper.CreateFluentNode assumes all implementors of IFluentNode have an internal constructor with a single IFluentScope parameter.

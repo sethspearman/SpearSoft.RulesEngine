@@ -1,10 +1,10 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class DefaultValueResolverTests
     {
         private class Foo
@@ -14,14 +14,7 @@ namespace RulesEngine.Tests
             public Foo Composition;
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ShouldNotAcceptNullArgument()
-        {
-            new DefaultValueResolver<int, int>(null);
-        }
-
-        [TestMethod]
+        [Test]
         public void ShouldResolveValueFromDictionary()
         {
             var foo = new Foo();
@@ -34,7 +27,7 @@ namespace RulesEngine.Tests
             Assert.AreSame(obj, result);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldIgnoreKeyNotFoundExceptions()
         {
             var foo = new Foo();
@@ -47,7 +40,7 @@ namespace RulesEngine.Tests
             Assert.IsNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldResolveValueFromArray()
         {
             var foo = new Foo();
@@ -60,7 +53,7 @@ namespace RulesEngine.Tests
             Assert.AreSame(obj, result);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldIgnoreIndexOutOfRange()
         {
             var foo = new Foo();
@@ -74,7 +67,7 @@ namespace RulesEngine.Tests
             Assert.IsNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldResolveValueFromComposedExpression()
         {
             var foo = new Foo();
@@ -87,7 +80,7 @@ namespace RulesEngine.Tests
             Assert.AreSame(obj.Dictionary, result);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldIgnoreNullReferenceExceptions()
         {
             var foo = new Foo();
@@ -100,7 +93,7 @@ namespace RulesEngine.Tests
             Assert.IsNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldImplementIValueResolver()
         {
             var foo = new Foo();

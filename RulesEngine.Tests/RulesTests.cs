@@ -2,14 +2,14 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.IO;
 using RulesEngine.Rules;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class RulesTests
     {
         private class MyNullableContainer<T>
@@ -85,7 +85,7 @@ namespace RulesEngine.Tests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void TestLessThanRule1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -99,7 +99,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(1)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestLessThanRuleCrossField()
         {
             var builder = new Fluent.FluentBuilder();
@@ -118,7 +118,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.LessThanRule, 3);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLessThanOrEqualToRule1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -132,7 +132,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(1)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestLessThanOrEqualToRuleCrossField()
         {
             var builder = new Fluent.FluentBuilder();
@@ -151,7 +151,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.LessThanOrEqualToRule, 3);
         }
 
-        [TestMethod]
+        [Test]
         public void TestGreaterThanRule1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -165,7 +165,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(1)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestGreaterThanRuleCrossField()
         {
             var builder = new Fluent.FluentBuilder();
@@ -184,7 +184,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.GreaterThanRule, 4);
         }
 
-        [TestMethod]
+        [Test]
         public void TestGreaterThanOrEqualToRule1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -198,7 +198,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(1)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestGreaterThanOrEqualToRuleCrossField()
         {
             var builder = new Fluent.FluentBuilder();
@@ -218,7 +218,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.GreaterThanOrEqualToRule, 4);
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleCrossFieldLessAndGreater()
         {
             var builder = new Fluent.FluentBuilder();
@@ -238,7 +238,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.BetweenRule, 1, 3, 4, BetweenRuleBoundsOption.BothInclusive);
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleCrossFieldLess()
         {
             var builder = new Fluent.FluentBuilder();
@@ -259,7 +259,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.BetweenRule, 6, 3, 4, BetweenRuleBoundsOption.BothInclusive);
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleCrossFieldGreater()
         {
             var builder = new Fluent.FluentBuilder();
@@ -280,7 +280,7 @@ namespace RulesEngine.Tests
             v.AssertError(o, p1 => p1.Value1, RuleKinds.BetweenRule, 4, 10, 3, BetweenRuleBoundsOption.BothInclusive);
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleInclusive()
         {
             var builder = new Fluent.FluentBuilder();
@@ -296,7 +296,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(11)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleLowerInclusiveUpperExclusive()
         {
             var builder = new Fluent.FluentBuilder();
@@ -312,7 +312,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(11)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleLowerExclusiveUpperInclusive()
         {
             var builder = new Fluent.FluentBuilder();
@@ -328,7 +328,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(11)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestBetweenRuleExclusive()
         {
             var builder = new Fluent.FluentBuilder();
@@ -346,7 +346,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(11)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestEqualRule1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -360,7 +360,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(2)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestEqualRuleCrossField1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -373,7 +373,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(4, 4)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestNotEqualRule1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -387,7 +387,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(2)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestNotEqualRuleCrossField1()
         {
             var builder = new Fluent.FluentBuilder();
@@ -401,7 +401,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void TestMustBeOneOfRule()
         {
             var builder = new Fluent.FluentBuilder();
@@ -418,7 +418,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<int>(4)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMustBeOneOfRule_CaseInsensitive()
         {
             var builder = new Fluent.FluentBuilder();
@@ -435,7 +435,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<string>("Bono")));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMustNotBeOneOfRule()
         {
             var builder = new Fluent.FluentBuilder();
@@ -452,7 +452,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(4)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMustNotBeOneOfRule_CaseInsensitive()
         {
             var builder = new Fluent.FluentBuilder();
@@ -469,7 +469,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<string>("Bono")));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMustPassRegex()
         {
             var builder = new Fluent.FluentBuilder();
@@ -486,7 +486,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<string>("BBBB")));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMustBeOfType()
         {
             var builder = new Fluent.FluentBuilder();
@@ -502,7 +502,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<object>(null)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestNullableNull()
         {
             var builder = new Fluent.FluentBuilder();
@@ -515,7 +515,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyNullableContainer<int>(1)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestNullableNotNull()
         {
             var builder = new Fluent.FluentBuilder();
@@ -528,7 +528,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(1)));
         }
 
-        [TestMethod]
+        [Test]
         public void TestReferenceNull()
         {
             var builder = new Fluent.FluentBuilder();
@@ -541,7 +541,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(new MyDomainObject<object>(new object())));
         }
 
-        [TestMethod]
+        [Test]
         public void TestReferenceNotNull()
         {
             var builder = new Fluent.FluentBuilder();
@@ -554,7 +554,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<object>(new object())));
         }
 
-        [TestMethod]
+        [Test]
         public void TestGenericRule()
         {
             var builder = new Fluent.FluentBuilder();
@@ -567,7 +567,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine.Validate(new MyDomainObject<int>(14)));
         }
 
-        [TestMethod]
+        [Test]
         public void ArgumentNullTests()
         {
 

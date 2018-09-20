@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Rules;
 using System.Linq.Expressions;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class MessageTests
     {
         private class MyMessageTestClass
@@ -41,7 +41,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageForSpecificRule()
         {
             var builder = new Fluent.FluentBuilder();
@@ -57,7 +57,7 @@ namespace RulesEngine.Tests
             report.AssertError(obj, o => o.A, RuleKinds.LessThanOrEqualToRule, 1);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageForProperty()
         {
             var builder = new Fluent.FluentBuilder();
@@ -95,7 +95,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("Object is not valid", report.GetErrorMessage(obj, o => o.B));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessagesCount()
         {
             var builder = new Fluent.FluentBuilder();

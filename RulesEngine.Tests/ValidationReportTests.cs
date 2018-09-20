@@ -2,12 +2,12 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ValidationReportTests
     {
         private class ClassA
@@ -19,7 +19,7 @@ namespace RulesEngine.Tests
             public int B { get; set; }
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldHaveErrorA()
         {
             var r = CreateReport();
@@ -32,7 +32,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(r.HasError(o, EquatableExpression.Create<ClassB, int>(b => b.A)));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldMatchAnyExpression()
         {
             var r = CreateReport();
@@ -44,7 +44,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void ShouldHaveErrorB()
         {
             var r = CreateReport();
@@ -57,7 +57,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(r.HasError(o, EquatableExpression.Create<ClassB, int>(b => b.A)));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldHaveErrorA1()
         {
             var r = CreateReport();
@@ -70,7 +70,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(r.HasError(o, EquatableExpression.Create<ClassB, int>(b => b.A)));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldHaveErrorB1()
         {
             var r = CreateReport();
@@ -83,7 +83,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(r.HasError(o, EquatableExpression.Create<ClassB, int>(b => b.A)));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldValidate()
         {
             var builder = new Fluent.FluentBuilder();

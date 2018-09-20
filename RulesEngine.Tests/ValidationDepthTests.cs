@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine;
 using System.Collections.ObjectModel;
 using RulesEngine.Rules;
@@ -10,7 +10,7 @@ using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ValidationDepthTests
     {
         IEngine _en1;
@@ -54,7 +54,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldValidateAllItemsInEnumeration()
         {
             var member1 = new Member(null);
@@ -68,12 +68,12 @@ namespace RulesEngine.Tests
             Assert.IsTrue(report.HasError(member2, memberNameExp), "Expected validation failure for member2. Name was null...");
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldShortCircuit()
         {
             var builder = new Fluent.FluentBuilder();
             builder.For<Member>()
-                .MustPassGenericRule(m => { throw new AssertFailedException("Should have short-circuited."); });
+                .MustPassGenericRule(m => { throw new Exception("Should have short-circuited."); });
             var en2 = builder.Build(_builder1);
 
             var member1 = new Member(null);
@@ -84,7 +84,7 @@ namespace RulesEngine.Tests
             _en1.Validate(member1, report, ValidationReportDepth.ShortCircuit);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldSkipValidationWhenShortCircuiting()
         {
             var president = new Member(null);

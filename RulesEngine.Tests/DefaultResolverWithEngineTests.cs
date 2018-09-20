@@ -2,12 +2,12 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class DefaultResolverWithEngineTests
     {
         private class ClassC
@@ -38,7 +38,7 @@ namespace RulesEngine.Tests
                 set { _value = value; }
             }
         }
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessage()
         {
             var builder = new Fluent.FluentBuilder();
@@ -62,7 +62,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("C is not valid", r.GetErrorMessage(o.C, f => f.C));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessage2()
         {
             var builder = new Fluent.FluentBuilder();
@@ -86,7 +86,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessage3()
         {
             var builder = new Fluent.FluentBuilder();
@@ -106,7 +106,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassC is not valid", r.GetErrorMessage(o, f => f.C));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessage4()
         {
             var builder = new Fluent.FluentBuilder();
@@ -138,7 +138,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessageWithIF()
         {
             var builder = new Fluent.FluentBuilder();
@@ -157,7 +157,7 @@ namespace RulesEngine.Tests
                 
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessageWithElse()
         {
             var builder = new Fluent.FluentBuilder();
@@ -180,7 +180,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessageWithNestedIF()
         {
             var builder = new Fluent.FluentBuilder();
@@ -200,7 +200,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldFindErrorMessageWithNestedIF_Else()
         {
             var builder = new Fluent.FluentBuilder();

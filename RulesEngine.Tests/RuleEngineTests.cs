@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class RuleEngineTests
     {
         class Foo1
@@ -35,7 +35,7 @@ namespace RulesEngine.Tests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldCopyAllRules()
         {
             var baseBuilder = new Fluent.FluentBuilder();
@@ -65,7 +65,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(engine1.Validate(new Foo2(6)));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldCopySpecificRules()
         {
             var baseBuilder = new Fluent.FluentBuilder();

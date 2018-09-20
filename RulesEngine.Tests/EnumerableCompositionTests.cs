@@ -2,14 +2,14 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine;
 using RulesEngine.Fluent;
 using System.Collections.ObjectModel;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class EnumerableCompositionTests
     {
         private class Foo
@@ -39,7 +39,7 @@ namespace RulesEngine.Tests
         }
         private IEngine _re;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             var builder = new Fluent.FluentBuilder();
@@ -55,7 +55,7 @@ namespace RulesEngine.Tests
             
         }
 
-        [TestMethod]
+        [Test]
         public void EnumerableTest1()
         {
             Container container = new Container(new Foo(1), new Foo(2), new Foo(3));
@@ -65,7 +65,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(_re.Validate(container), "Expected Container to be invalid because one Foo is invalid.");
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldValidateUsingOtherRulesEngine()
         {
             var builder = new Fluent.FluentBuilder();

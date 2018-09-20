@@ -2,14 +2,14 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine;
 using RulesEngine.Fluent;
 using System.Collections.ObjectModel;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class InheritanceTests
     {
         private class ClassA
@@ -27,7 +27,7 @@ namespace RulesEngine.Tests
 
         IEngine _re;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             var builder = new Fluent.FluentBuilder();
@@ -47,14 +47,14 @@ namespace RulesEngine.Tests
             _re = builder.Build();
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldInheritRules()
         {
             ClassB b = new ClassB() { ParamA = 2000, ParamB = 999};
             Assert.IsFalse(_re.Validate(b), "Expected 'b' to be invalid because inherited ParamA is not valid.");
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldInheritRules_2()
         {
             ClassC c = new ClassC() { ParamA = 999, ParamB = 999, ParamC=999 };

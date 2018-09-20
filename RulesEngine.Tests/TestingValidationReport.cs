@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq.Expressions;
 
 namespace RulesEngine.Tests
@@ -25,7 +24,8 @@ namespace RulesEngine.Tests
                                 && object.ReferenceEquals(e.Value, value)
                                 && (validationArguments == null || AreEquivalent(e.ValidationArguments, validationArguments))
                                 );
-            if (!hasError) throw new AssertFailedException(string.Format("Expected rule failure for rulekind {0}, expression {1}.", ruleKind, expression));
+            //if (!hasError) throw new AssertFailedException(string.Format("Expected rule failure for rulekind {0}, expression {1}.", ruleKind, expression));
+            if (!hasError) throw new Exception(string.Format("Expected rule failure for rulekind {0}, expression {1}.", ruleKind, expression));
         }
 
         public bool HasError(object value, EquatableExpression expression)

@@ -1,11 +1,11 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Linq.Expressions;
 using System.Linq;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class DefaultCulpritResolverTests
     {
         private class Dummy
@@ -24,7 +24,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void ShouldResolve()
         {
             Expression<Func<Dummy, int>> expression = f => f.Dummy2.Value2;
@@ -36,7 +36,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldResolve_Unnormalized()
         {
             var expression = DummyExp(d => d.Dummy2.GetCalculatedValue2());

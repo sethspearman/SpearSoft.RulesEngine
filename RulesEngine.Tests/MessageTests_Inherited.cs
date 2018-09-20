@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class InheritedMessageTests
     {
         private class ClassA
@@ -66,7 +66,7 @@ namespace RulesEngine.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void TestMessageInheritedClass()
         {
             var builder = new Fluent.FluentBuilder();
@@ -90,7 +90,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassC validation for A", report.GetErrorMessage(obj, o => o.A));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageInheritedClass2()
         {
             //NOTE: Same as TestMessageInheritedClass, with order of registrations changed.
@@ -117,7 +117,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassC validation for A", report.GetErrorMessage(obj, o => o.A));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageInheritedClass3()
         {
             var builder = new Fluent.FluentBuilder();
@@ -149,7 +149,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassC validation for A.2", report.GetErrorMessage(obj, o => o.A));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageInheritedClass4()
         {
             //NOTE: This test is the same as No.3, with definition of rules order changed.
@@ -186,7 +186,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageInheritedClass5()
         {
             var builder = new Fluent.FluentBuilder();
@@ -208,7 +208,7 @@ namespace RulesEngine.Tests
             Assert.AreEqual("ClassA validation for A", report.GetErrorMessage((ClassA)obj, o => o.A));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMessageInheritedClass6()
         {
             var builder = new Fluent.FluentBuilder();

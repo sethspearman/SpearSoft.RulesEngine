@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
@@ -45,12 +45,12 @@ namespace RulesEngine.Tests
         }
     }
 
-    [TestClass]
+    [TestFixture]
     public class ConditionalTests
     {
         //TODO: Test with 'if' and 'Composition'. Check, there may already be some.
 
-        [TestMethod]
+        [Test]
         public void ShouldWorkWithConditions()
         {
             var builder = new Fluent.FluentBuilder();
@@ -75,7 +75,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(data4));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldWorkWithConditions2()
         {
             var builder = new Fluent.FluentBuilder();
@@ -101,7 +101,7 @@ namespace RulesEngine.Tests
         }
 
         
-        [TestMethod]
+        [Test]
         public void ShouldWorkWithConditions3()
         {
             var builder = new Fluent.FluentBuilder();

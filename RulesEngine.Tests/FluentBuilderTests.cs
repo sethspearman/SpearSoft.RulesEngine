@@ -1,12 +1,12 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class FluentBuilderTests
     {
-        [TestMethod]
+        [Test]
         public void ShouldCreateEngine()
         {
             var builder = new FluentBuilder();
@@ -20,7 +20,7 @@ namespace RulesEngine.Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void NodeTests()
         {
             var builder = new FluentBuilder();

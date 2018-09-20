@@ -2,14 +2,14 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine;
 using RulesEngine.Fluent;
 using System.Collections.ObjectModel;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class CompositionTests
     {
         class Foo
@@ -23,7 +23,7 @@ namespace RulesEngine.Tests
             }
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldValidateComposition_Explicit()
         {
             //TODO: Redo this test!!! CallValidate() = implicit call. Build an entirely new engine for the explicit test.
@@ -47,7 +47,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(foo));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldValidateComposition_ImplicitEngine()
         {
             var builder = new Fluent.FluentBuilder();
@@ -70,7 +70,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(foo));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldValidateComposition_MultiNested_ImplicitEngine()
         {
             var builder = new Fluent.FluentBuilder();
@@ -97,7 +97,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(engine.Validate(foo));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldCulpabiliseComposition()
         {
             var builder = new Fluent.FluentBuilder();

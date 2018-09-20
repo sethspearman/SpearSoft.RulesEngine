@@ -2,13 +2,13 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using RulesEngine.Rules;
 using RulesEngine.Fluent;
 
 namespace RulesEngine.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class InterfaceTests
     {
         private interface IMyClass
@@ -56,7 +56,7 @@ namespace RulesEngine.Tests
 
 
 
-        [TestMethod]
+        [Test]
         public void SimpleInterfaceTest()
         {
             var builder = new Fluent.FluentBuilder();

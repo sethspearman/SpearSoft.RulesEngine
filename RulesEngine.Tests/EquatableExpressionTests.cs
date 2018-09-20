@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Linq.Expressions;
 
 namespace RulesEngine.Tests
@@ -10,7 +10,7 @@ namespace RulesEngine.Tests
     /// <summary>
     /// Summary description for EquatableExpressionTests
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class EquatableExpressionTests
     {
         public interface IClassA
@@ -30,7 +30,7 @@ namespace RulesEngine.Tests
             public int A { get; set; }
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldEqual()
         {
             var exp1 = EquatableExpression.Create<ClassA, int>(a => a.A);
@@ -40,7 +40,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(exp1 != exp2);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldNotEqual()
         {
             var exp1 = EquatableExpression.Create<ClassA, int>(a => a.A);
@@ -50,7 +50,7 @@ namespace RulesEngine.Tests
             Assert.IsFalse(exp1 == exp2);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldApplyTo()
         {
             var exp1 = EquatableExpression.Create<ClassA, int>(a => a.A);
@@ -65,7 +65,7 @@ namespace RulesEngine.Tests
             Assert.IsTrue(exp3.AppliesTo(exp2));
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldNotApplyTo()
         {
             var exp1 = EquatableExpression.Create<ClassA, int>(a => a.A);
@@ -78,21 +78,6 @@ namespace RulesEngine.Tests
             Assert.IsFalse(exp2.AppliesTo(exp3));
             Assert.IsFalse(exp3.AppliesTo(exp1));
             Assert.IsFalse(exp3.AppliesTo(exp2));
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void ShouldThrowArgumentException()
-        {
-            //NOTE: Can only accept Func's with 1 parameter.
-            new EquatableExpression(ExpressionHelper.New<ClassA, int, int>((a, b) => 123));
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ShouldThrowArgumentNullException()
-        {
-            new EquatableExpression(null);
         }
     }
 }
