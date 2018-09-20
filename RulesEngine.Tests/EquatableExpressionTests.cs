@@ -5,7 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     /// <summary>
     /// Summary description for EquatableExpressionTests

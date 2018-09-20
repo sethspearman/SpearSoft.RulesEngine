@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     public class Foo2
     {

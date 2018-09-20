@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-namespace RulesEngine.Mvc
+namespace SpearSoft.RulesEngine.Mvc
 {
     internal class ProperyNameVisitor : ExpressionVisitor
     {

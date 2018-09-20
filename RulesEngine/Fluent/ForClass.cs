@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Fluent
+namespace SpearSoft.RulesEngine.Fluent
 {
     public class ForClass<T> : IMustPassRule<ForClass<T>, T, T>, IFluentNode
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Rules
+namespace SpearSoft.RulesEngine.Rules
 {
     public class LessThanRule<R> : IRule<R>
         where R : IComparable<R>

@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class DefaultValueResolverTests

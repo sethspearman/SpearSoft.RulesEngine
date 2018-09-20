@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace RulesEngine.Mvc
+namespace SpearSoft.RulesEngine.Mvc
 {
     public class Startup
     {

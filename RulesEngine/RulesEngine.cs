@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 using System.Collections.Specialized;
-using RulesEngine.Fluent;
+using SpearSoft.RulesEngine.Fluent;
 
-namespace RulesEngine
+namespace SpearSoft.RulesEngine
 {
     public interface IEngine
     {

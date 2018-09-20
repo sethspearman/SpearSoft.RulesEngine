@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using NUnit.Framework;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class ComparerTests

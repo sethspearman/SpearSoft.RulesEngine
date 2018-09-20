@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace RulesEngine
+namespace SpearSoft.RulesEngine
 {
     internal class ReferenceEqualityComparer : IEqualityComparer<object>
     {

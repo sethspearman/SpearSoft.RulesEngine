@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
-using RulesEngine.Fluent;
+using SpearSoft.RulesEngine.Fluent;
 
-namespace RulesEngine
+namespace SpearSoft.RulesEngine
 {
     public class ConditionalInvoker<T> : IRuleInvoker
     {

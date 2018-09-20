@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq.Expressions;
 using System.Collections;
 
-namespace RulesEngine
+namespace SpearSoft.RulesEngine
 {
     public class EnumerableCompositionInvoker<T, R> : IRuleInvoker
         where R : IEnumerable

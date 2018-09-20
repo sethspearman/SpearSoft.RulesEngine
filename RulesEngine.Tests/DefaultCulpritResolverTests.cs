@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System.Linq.Expressions;
 using System.Linq;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class DefaultCulpritResolverTests

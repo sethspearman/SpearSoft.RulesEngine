@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Fluent
+namespace SpearSoft.RulesEngine.Fluent
 {
     public interface IMustPassRule<M, T, R> : IFluentNode
     {

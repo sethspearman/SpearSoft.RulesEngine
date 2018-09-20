@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Collections;
 
-namespace RulesEngine
+namespace SpearSoft.RulesEngine
 {
     public class ValidationReport : IValidationReport
     {

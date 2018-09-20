@@ -3,11 +3,11 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using RulesEngine;
-using RulesEngine.Fluent;
+using SpearSoft.RulesEngine;
+using SpearSoft.RulesEngine.Fluent;
 using System.Collections.ObjectModel;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class CompositionTests

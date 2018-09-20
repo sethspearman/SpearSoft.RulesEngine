@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using RulesEngine.Rules;
+using SpearSoft.RulesEngine.Rules;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class DefaultResolverTests

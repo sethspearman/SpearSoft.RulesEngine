@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RulesEngine.Rules
+namespace SpearSoft.RulesEngine.Rules
 {
     public class OfTypeRule<R>
         : IRule<R>

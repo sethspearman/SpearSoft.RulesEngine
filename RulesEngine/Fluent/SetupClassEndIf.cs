@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Fluent
+namespace SpearSoft.RulesEngine.Fluent
 {
     public class SetupClassEndIf<T, R, ENDIF> : IMustPassRule<SetupClassEndIf<T, R, ENDIF>, T, R>, IFluentNode
     {

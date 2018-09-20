@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace RulesEngine.Fluent
+namespace SpearSoft.RulesEngine.Fluent
 {
     public class ForClassElseEndIf<T, ENDIF> : IMustPassRule<ForClassElseEndIf<T, ENDIF>, T, T>, IFluentNode
     {

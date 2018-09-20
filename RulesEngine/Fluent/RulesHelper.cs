@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 using System.Collections;
-using RulesEngine.Rules;
+using SpearSoft.RulesEngine.Rules;
 using System.Text.RegularExpressions;
 
-namespace RulesEngine.Fluent
+namespace SpearSoft.RulesEngine.Fluent
 {
     public static class RulesHelper
     {

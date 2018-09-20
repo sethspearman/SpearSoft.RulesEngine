@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace RulesEngine.Mvc
+namespace SpearSoft.RulesEngine.Mvc
 {
     public class MvcValidationReport : IValidationReport
     {

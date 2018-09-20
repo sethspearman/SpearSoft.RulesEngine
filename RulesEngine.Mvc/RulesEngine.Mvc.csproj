@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>SpearSoft.RulesEngine.Mvc</AssemblyName>
+    <RootNamespace>SpearSoft.RulesEngine.Mvc</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

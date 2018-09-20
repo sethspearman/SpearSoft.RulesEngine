@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using RulesEngine.Fluent;
+using SpearSoft.RulesEngine.Fluent;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class FluentBuilderTests

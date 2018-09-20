@@ -1,9 +1,9 @@
 ﻿using System;
 using NUnit.Framework;
-using RulesEngine.Fluent;
-using RulesEngine.Rules;
+using SpearSoft.RulesEngine.Fluent;
+using SpearSoft.RulesEngine.Rules;
 
-namespace RulesEngine.Tests
+namespace SpearSoft.RulesEngine.Tests
 {
     [TestFixture]
     public class CulpritTests

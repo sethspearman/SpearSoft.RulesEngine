@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Linq.Expressions;
 using System.Collections.Specialized;
 
-namespace RulesEngine.Model
+namespace SpearSoft.RulesEngine.Model
 {
     public static class ModelHelper
     {

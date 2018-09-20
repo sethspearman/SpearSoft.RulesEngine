@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace RulesEngine.Rules
+namespace SpearSoft.RulesEngine.Rules
 {
     public class RegexRule : IRule<string>
     {

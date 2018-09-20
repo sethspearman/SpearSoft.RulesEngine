@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace RulesEngine.Mvc
+namespace SpearSoft.RulesEngine.Mvc
 {
     public class Program
     {

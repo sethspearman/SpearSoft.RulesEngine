@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace RulesEngine.Fluent
+namespace SpearSoft.RulesEngine.Fluent
 {
     public static class MessageHelper
     {
